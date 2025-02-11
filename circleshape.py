@@ -17,3 +17,7 @@ class CircleShape(pygame.sprite.Sprite):
 
     def update(self, dt):
         pass
+
+    def is_colliding(self, asteroid):
+        radius_sum = self.radius + asteroid.radius
+        return radius_sum > self.position.distance_to(asteroid.position)
